@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drew's Better Can Cleaning | Trash & Recycling Bin Cleaning</title>
+<meta name="description" content="Drew's Better Can Cleaning offers mobile, on-site trash and recycling bin sanitation for homeowners. No more stinky cans — call today to schedule.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;900&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1b2a3a;
+    --teal: #1a7a72;
+    --teal-dark: #12564f;
+    --cream: #fdf9f1;
+    --sand: #f2e9d8;
+    --clean-blue: #e8f3f2;
+    --ink: #202a2f;
+    --white: #ffffff;
+    --radius: 16px;
+    --max: 1140px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Nunito Sans', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--navy);
+    line-height: 1.15;
+    margin: 0 0 0.5em;
+  }
+
+  a { color: inherit; }
+
+  img, svg { display: block; max-width: 100%; }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--teal);
+    color: var(--white);
+    font-weight: 800;
+    text-decoration: none;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    border: 2px solid var(--teal);
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    font-size: 1rem;
+  }
+  .btn:hover, .btn:focus-visible {
+    background: var(--teal-dark);
+    border-color: var(--teal-dark);
+    transform: translateY(-2px);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+  }
+  .btn-outline:hover, .btn-outline:focus-visible {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    background: var(--navy);
+    color: var(--white);
+    padding: 0.75rem 1rem;
+    z-index: 100;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  /* Header */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(27,42,58,0.08);
+  }
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 0;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .brand svg { width: 38px; height: 38px; flex-shrink: 0; }
+  nav.primary-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.6rem;
+    margin: 0;
+    padding: 0;
+  }
+  nav.primary-nav a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 0.95rem;
+  }
+  nav.primary-nav a:hover { color: var(--teal); }
+  .header-call {
+    display: none;
+  }
+  @media (min-width: 640px) {
+    .header-call {
+      display: inline-flex;
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+      padding: 0.55rem 1.1rem;
+      font-size: 0.9rem;
+    }
+  }
+  @media (max-width: 640px) {
+    nav.primary-nav ul { gap: 1rem; font-size: 0.85rem; }
+    nav.primary-nav a { font-size: 0.85rem; }
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--teal-dark) 100%);
+    color: var(--white);
+    padding: 4rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .wrap {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+  @media (min-width: 860px) {
+    .hero .wrap { grid-template-columns: 1.1fr 0.9fr; }
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    color: var(--white);
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    margin-bottom: 0.6rem;
+  }
+  .hero p.lead {
+    font-size: 1.15rem;
+    max-width: 46ch;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.8rem;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+  .hero-ctas .btn-outline {
+    color: var(--white);
+    border-color: rgba(255,255,255,0.6);
+  }
+  .hero-ctas .btn-outline:hover {
+    background: var(--white);
+    color: var(--navy);
+  }
+  .hero-art {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-art svg { width: 100%; max-width: 360px; }
+
+  /* Trust strip */
+  .trust-strip {
+    background: var(--sand);
+    padding: 0.9rem 0;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .trust-strip .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+  .trust-strip span { display: flex; align-items: center; gap: 0.4rem; }
+  .trust-strip svg { width: 18px; height: 18px; color: var(--teal); }
+
+  /* Section spacing */
+  section { padding: 4.5rem 0; }
+  .section-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+  }
+  .section-head h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); }
+  .section-head p { color: #47555f; font-size: 1.05rem; }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.9rem;
+    box-shadow: 0 4px 18px rgba(27,42,58,0.06);
+    border: 1px solid rgba(27,42,58,0.06);
+  }
+  .service-card .icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--clean-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+  }
+  .service-card svg { width: 30px; height: 30px; color: var(--teal-dark); }
+  .service-card h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+  .service-card p { color: #4a5860; font-size: 0.98rem; margin: 0; }
+  .service-tag {
+    display: inline-block;
+    margin-top: 0.9rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--teal-dark);
+    background: var(--clean-blue);
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* About */
+  .about-section {
+    background: var(--white);
+  }
+  .about-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  @media (min-width: 860px) {
+    .about-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .about-grid h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+  .about-grid p { color: #47555f; font-size: 1.05rem; }
+  .about-points {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    gap: 0.9rem;
+  }
+  .about-points li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .about-points svg {
+    width: 22px;
+    height: 22px;
+    color: var(--teal);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .about-art {
+    background: var(--clean-blue);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  .about-art svg { width: 100%; max-width: 300px; }
+
+  /* Process */
+  .process-section { background: var(--sand); }
+  .steps {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    counter-reset: step;
+  }
+  .step {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    position: relative;
+    border: 1px solid rgba(27,42,58,0.06);
+  }
+  .step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    top: -14px;
+    left: 1.5rem;
+    background: var(--teal);
+    color: var(--white);
+    font-weight: 800;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+  }
+  .step h3 { font-size: 1.05rem; margin-top: 0.6rem; }
+  .step p { color: #4a5860; font-size: 0.95rem; margin: 0; }
+
+  /* CTA banner */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    color: var(--white);
+    text-align: center;
+  }
+  .cta-banner h2 { color: var(--white); }
+  .cta-banner p { color: rgba(255,255,255,0.9); max-width: 50ch; margin: 0 auto 1.8rem; }
+  .cta-banner .btn { background: var(--white); color: var(--teal-dark); border-color: var(--white); }
+  .cta-banner .btn:hover { background: var(--sand); border-color: var(--sand); }
+
+  /* Contact */
+  .contact-section { background: var(--white); }
+  .contact-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 780px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .contact-card {
+    background: var(--clean-blue);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+  .contact-card h3 { font-size: 1.2rem; }
+  .contact-line {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 1rem 0;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 1.05rem;
+  }
+  .contact-line svg { width: 22px; height: 22px; color: var(--teal-dark); flex-shrink: 0; }
+  .contact-note {
+    background: var(--sand);
+    border-radius: var(--radius);
+    padding: 2rem;
+    color: #4a5860;
+    font-size: 0.98rem;
+  }
+  .contact-note h3 { font-size: 1.2rem; color: var(--navy); }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    padding: 2.8rem 0 1.6rem;
+    font-size: 0.9rem;
+  }
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1.6rem;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    color: var(--white);
+    font-size: 1.05rem;
+  }
+  .footer-brand svg { width: 28px; height: 28px; }
+  footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  footer a:hover { color: var(--white); text-decoration: underline; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .wcc-credit { color: rgba(255,255,255,0.45); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="4" y="4" width="40" height="40" rx="10" fill="#1a7a72"/>
+        <path d="M16 18h16v20a3 3 0 01-3 3H19a3 3 0 01-3-3V18z" fill="#fff"/>
+        <path d="M14 18h20" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M20 14h8l1.4 4H18.6L20 14z" fill="#fff"/>
+        <path d="M20 23v11M24 23v11M28 23v11" stroke="#1a7a72" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      Drew's Better Can Cleaning
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-outline header-call" href="tel:12192965015">📞 (219) 296-5015</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <span class="hero-eyebrow">Locally Owned &amp; Operator-Run</span>
+        <h1>Stinky trash cans? Consider it handled.</h1>
+        <p class="lead">Drew's Better Can Cleaning brings professional, hot-water sanitation right to your curb — so your trash and recycling bins stay clean, sanitized, and odor-free without you lifting a finger.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="tel:12192965015">Call (219) 296-5015 to Book</a>
+          <a class="btn btn-outline" href="#services">See Our Services</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="160" cy="160" r="150" fill="#ffffff" fill-opacity="0.06"/>
+          <rect x="95" y="120" width="130" height="150" rx="14" fill="#e8f3f2"/>
+          <rect x="95" y="120" width="130" height="20" rx="6" fill="#ffffff"/>
+          <rect x="115" y="95" width="90" height="30" rx="8" fill="#ffffff"/>
+          <path d="M160 60 L160 100" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          <path d="M140 60h40" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="230" cy="200" r="8" fill="#fff" fill-opacity="0.7"/>
+          <circle cx="250" cy="230" r="5" fill="#fff" fill-opacity="0.5"/>
+          <circle cx="90" cy="220" r="6" fill="#fff" fill-opacity="0.6"/>
+          <rect x="125" y="150" width="70" height="6" rx="3" fill="#1a7a72"/>
+          <rect x="125" y="170" width="70" height="6" rx="3" fill="#1a7a72"/>
+          <rect x="125" y="190" width="70" height="6" rx="3" fill="#1a7a72"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="wrap">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Mobile service — we come to you</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Direct line to the owner-operator</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Bin cleaning is all we do best</span>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Services built around your cans</h2>
+        <p>Where general pressure washers treat your bins as an afterthought, can cleaning is our specialty. Here's how we can help.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 7h12l-1 13a2 2 0 01-2 2H9a2 2 0 01-2-2L6 7z"/><path d="M9 4h6l1 3H8l1-3z"/><path d="M10 11v6M14 11v6"/></svg>
+          </div>
+          <h3>Residential Trash Can Cleaning</h3>
+          <p>Deep, hot-water sanitation for your household garbage cans that blasts away grime, residue, and lingering smells.</p>
+          <span class="service-tag">Most Popular</span>
+        </article>
+        <article class="service-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7l4-4 4 4M8 3v11a4 4 0 004 4h4M20 17l-4 4-4-4"/></svg>
+          </div>
+          <h3>Recycling Bin Cleaning</h3>
+          <p>Sticky, sugary, and messy recycling gets the same thorough treatment so bins stay fresh between pickups.</p>
+        </article>
+        <article class="service-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20h18M6 20V10l6-6 6 6v10M9 20v-6h6v6"/></svg>
+          </div>
+          <h3>General Pressure Washing</h3>
+          <p>Ask about pressure washing for driveways, walkways, and home exteriors — a great add-on to your can cleaning visit.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="wrap about-grid">
+      <div>
+        <h2>Meet Drew — your local can cleaning guy</h2>
+        <p>Drew's Better Can Cleaning is a small, owner-operated business focused on one thing: keeping neighborhood trash and recycling bins clean and odor-free. Instead of squeezing bin cleaning in as an afterthought, we built our whole service around it — bringing specialized equipment right to your curb.</p>
+        <ul class="about-points">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Mobile service — no need to transport your own bins
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Talk directly with the owner when you call
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Focused, niche expertise most general cleaners skip
+          </li>
+        </ul>
+      </div>
+      <div class="about-art">
+        <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="40" y="70" width="220" height="160" rx="16" fill="#1a7a72" fill-opacity="0.1"/>
+          <rect x="70" y="90" width="60" height="110" rx="10" fill="#1a7a72"/>
+          <rect x="150" y="90" width="60" height="110" rx="10" fill="#12564f"/>
+          <path d="M85 60l10-20h20l10 20" stroke="#1a7a72" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M165 60l10-20h20l10 20" stroke="#12564f" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="240" cy="60" r="5" fill="#1a7a72" fill-opacity="0.5"/>
+          <circle cx="255" cy="90" r="4" fill="#1a7a72" fill-opacity="0.4"/>
+          <circle cx="235" cy="110" r="3" fill="#1a7a72" fill-opacity="0.3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>Simple, no-fuss scheduling from the first call to sparkling clean cans.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Call to schedule</h3>
+          <p>Ring Drew directly to talk through what you need and pick a time that works for you.</p>
+        </div>
+        <div class="step">
+          <h3>We come to you</h3>
+          <p>Just leave your cans out on the scheduled day — no need to load or transport anything.</p>
+        </div>
+        <div class="step">
+          <h3>Deep clean &amp; sanitize</h3>
+          <p>Your bins get a thorough hot-water clean to remove grime, buildup, and odor.</p>
+        </div>
+        <div class="step">
+          <h3>Enjoy fresh cans</h3>
+          <p>Your bins are put back clean, sanitized, and ready for the next pickup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="wrap">
+      <h2>Ready for cleaner cans?</h2>
+      <p>Give Drew a call to schedule your trash or recycling bin cleaning — routine service or a one-time refresh, either way we've got you covered.</p>
+      <a class="btn" href="tel:12192965015">Call (219) 296-5015</a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+        <p>Reach out directly to schedule your appointment or ask about pricing and availability.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact Details</h3>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:12192965015">(219) 296-5015</a>
+          </div>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Call to schedule &amp; check availability
+          </div>
+          <a class="btn" href="tel:12192965015" style="margin-top:0.5rem;">Call Now</a>
+        </div>
+        <div class="contact-note">
+          <h3>Service Area</h3>
+          <p>Drew's Better Can Cleaning is a mobile service that comes directly to your home. Give us a call to confirm availability in your neighborhood and get a quote for your address.</p>
+          <p style="margin-bottom:0;">Prefer to plan ahead? Ask about recurring service to keep your cans fresh all year round.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="4" width="40" height="40" rx="10" fill="#1a7a72"/>
+          <path d="M16 18h16v20a3 3 0 01-3 3H19a3 3 0 01-3-3V18z" fill="#fff"/>
+        </svg>
+        Drew's Better Can Cleaning
+      </div>
+      <nav aria-label="Footer">
+        <ul style="list-style:none; display:flex; gap:1.2rem; padding:0; margin:0;">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <a href="tel:12192965015">(219) 296-5015</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Drew's Better Can Cleaning. All rights reserved.</span>
+      <span class="wcc-credit">Website sample by Wild Card Creative Co</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
